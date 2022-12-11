@@ -1,13 +1,8 @@
-import collections
 import matplotlib.pyplot as plt
+from . import Expense
+import collections
 
-try:
-    from budget.Expense import *        # not sure why is so, but this one works when invoking from cmd: "   (venv) C:\Users\Zet\source\repos\python-collections-budget>python -m budget.FrequentExpenses"
-except ImportError:
-    from Expense import *               # and this one from VSC
-                                        # when only one is selected ImportError for one of the tools: cmd or VSC
-
-expenses = Expenses()
+expenses = Expense.Expenses()
 expenses.read_expenses(r'data\spending_data.csv')
 
 spending_categories = []
